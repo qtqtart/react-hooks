@@ -6,7 +6,7 @@ export default {
   title: "State/useBoolean/Demo",
 } as Meta<typeof Demo>;
 
-export const Demo = () => {
+export function Demo() {
   const { value, set, toggle, reset } = useBoolean();
 
   return (
@@ -25,4 +25,4 @@ export const Demo = () => {
       <button onClick={() => reset()}>reset</button>
     </div>
   );
-};
+}

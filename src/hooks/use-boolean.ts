@@ -3,16 +3,14 @@ import React from "react";
 export function useBoolean(initialValue = false) {
   const [value, setValue] = React.useState(initialValue);
 
-  const set = (value: boolean) => setValue(value);
-
-  const toggle = () => setValue((prevValue) => !prevValue);
-
-  const reset = () => setValue(initialValue);
+  const actions = {
+    set: (value: boolean) => setValue(value),
+    toggle: () => setValue((prevValue) => !prevValue),
+    reset: () => setValue(initialValue),
+  };
 
   return {
     value,
-    set,
-    toggle,
-    reset,
+    ...actions,
   };
 }
