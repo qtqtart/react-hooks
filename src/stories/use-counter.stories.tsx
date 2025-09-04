@@ -6,8 +6,8 @@ export default {
   title: "State/useCounter/Demo",
 } as Meta<typeof Demo>;
 
-export const Demo = () => {
-  const { count, isAtMax, isAtMin, increment, decrement, set, reset } =
+export function Demo() {
+  const { value, isAtMax, isAtMin, increment, decrement, set, reset } =
     useCounter();
 
   return (
@@ -18,7 +18,7 @@ export const Demo = () => {
         width: "fit-content",
       }}
     >
-      <p>value: {count}</p>
+      <p>value: {value}</p>
       <p>value is a max: {isAtMax ? "true" : "false"}</p>
       <p>value is a min: {isAtMin ? "true" : "false"}</p>
 
@@ -28,4 +28,4 @@ export const Demo = () => {
       <button onClick={() => reset()}>reset</button>
     </div>
   );
-};
+}
