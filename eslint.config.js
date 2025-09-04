@@ -66,5 +66,4 @@ export default tseslint.config(
       },
     },
   },
-  storybook.configs["flat/recommended"],
 );
