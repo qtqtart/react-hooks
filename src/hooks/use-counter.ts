@@ -1,7 +1,7 @@
 import clamp from "lodash-es/clamp";
 import React from "react";
 
-type Params = {
+type useCounterProps = {
   initialValue?: number;
   min?: number;
   max?: number;
@@ -11,30 +11,25 @@ export function useCounter({
   initialValue = 0,
   min = -Infinity,
   max = Infinity,
-}: Params = {}) {
-  const [count, setCount] = React.useState(() => clamp(initialValue, min, max));
+}: useCounterProps = {}) {
+  const [value, setValue] = React.useState(() => clamp(initialValue, min, max));
 
-  const isAtMin = count === min;
-  const isAtMax = count === max;
+  const isAtMin = value === min;
+  const isAtMax = value === max;
 
-  const increment = (value: number = 1) =>
-    setCount((prevCount) => clamp(prevCount + value, min, max));
-
-  const decrement = (value: number = 1) =>
-    setCount((prevCount) => clamp(prevCount - value, min, max));
-
-  const set = (value: number) => setCount(clamp(value, min, max));
-
-  const reset = (value?: number) =>
-    setCount(clamp(value ?? initialValue, min, max));
+  const actions = {
+    increment: (value: number = 1) =>
+      setValue((prevValue) => clamp(prevValue + value, min, max)),
+    decrement: (value: number = 1) =>
+      setValue((prevValue) => clamp(prevValue - value, min, max)),
+    set: (value: number) => setValue(clamp(value, min, max)),
+    reset: (value?: number) => setValue(clamp(value ?? initialValue, min, max)),
+  };
 
   return {
-    count,
+    value,
     isAtMin,
     isAtMax,
-    increment,
-    decrement,
-    set,
-    reset,
+    ...actions,
   };
 }
