@@ -1,9 +1,9 @@
-import { Meta } from "@storybook/react-vite";
+import type { Meta } from '@storybook/react-vite';
 
-import { useBoolean } from "@/hooks/use-boolean";
+import { useBoolean } from '@/hooks/use-boolean';
 
 export default {
-  title: "State/useBoolean/Demo",
+  title: 'State/useBoolean/Demo'
 } as Meta<typeof Demo>;
 
 export function Demo() {
@@ -12,17 +12,25 @@ export function Demo() {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "fit-content",
+        display: 'flex',
+        flexDirection: 'column',
+        width: 'fit-content'
       }}
     >
-      <p>value: {value ? "true" : "false"}</p>
+      <p>value: {value ? 'true' : 'false'}</p>
 
-      <button onClick={() => set(true)}>set true</button>
-      <button onClick={() => set(false)}>set false</button>
-      <button onClick={() => toggle()}>toggle</button>
-      <button onClick={() => reset()}>reset</button>
+      <button type="button" onClick={() => set(true)}>
+        set true
+      </button>
+      <button type="button" onClick={() => set(false)}>
+        set false
+      </button>
+      <button type="button" onClick={() => toggle()}>
+        toggle
+      </button>
+      <button type="button" onClick={() => reset()}>
+        reset
+      </button>
     </div>
   );
 }

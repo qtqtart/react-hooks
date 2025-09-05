@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export function useBoolean(initialValue = false) {
   const [value, setValue] = React.useState(initialValue);
@@ -6,11 +6,11 @@ export function useBoolean(initialValue = false) {
   const actions = {
     set: (value: boolean) => setValue(value),
     toggle: () => setValue((prevValue) => !prevValue),
-    reset: () => setValue(initialValue),
+    reset: () => setValue(initialValue)
   };
 
   return {
     value,
-    ...actions,
+    ...actions
   };
 }
