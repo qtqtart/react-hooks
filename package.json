@@ -2,7 +2,7 @@
   "name": "@qtqtart/react-hooks",
   "description": "react hooks",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": false,
   "sideEffects": false,
   "type": "module",
