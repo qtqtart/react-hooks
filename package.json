@@ -1,9 +1,15 @@
 {
   "name": "@qtqtart/react-hooks",
+  "description": "react hooks",
+  "license": "MIT",
   "version": "0.0.2",
-  "type": "module",
   "private": false,
   "sideEffects": false,
+  "type": "module",
+  "keywords": [
+    "react",
+    "hooks"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -13,6 +19,14 @@
   "files": [
     "dist"
   ],
+  "author": {
+    "name": "Merkulov Artem",
+    "url": "https://github.com/qtqtart"
+  },
+  "homepage": "https://github.com/qtqtart/react-hooks",
+  "repository": {
+    "url": "https://github.com/qtqtart/react-hooks"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -25,19 +39,19 @@
     "release": "release-it"
   },
   "peerDependencies": {
-    "@types/lodash-es": "4",
-    "@types/react": "18 || 19",
-    "@types/react-dom": "18 || 19",
-    "lodash-es": "4",
-    "react": "18 || 19",
-    "react-dom": "18 || 19"
+    "@types/lodash-es": "^4",
+    "@types/react": "^18 || ^19",
+    "@types/react-dom": "^18 || ^19",
+    "lodash-es": "^4",
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "dependencies": {
     "lodash-es": "4.17.12"
   },
   "devDependencies": {
-    "@qtqtart/eslint-config": "1.0.2",
-    "@qtqtart/prettier-config": "1.0.2",
+    "@qtqtart/eslint-config": "1.0.3",
+    "@qtqtart/prettier-config": "1.0.3",
     "@storybook/addon-docs": "9.1.4",
     "@storybook/addon-onboarding": "9.1.4",
     "@storybook/blocks": "8.6.14",
