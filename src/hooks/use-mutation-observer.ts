@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react';
 
 const DEFAULT_OPTIONS: MutationObserverInit = {
   attributes: true,
   childList: true,
-  subtree: true,
+  subtree: true
 };
 
-type useMutationObserverProps<T extends HTMLElement = HTMLElement> = {
+interface useMutationObserverProps<T extends HTMLElement = HTMLElement> {
   targetRef: React.RefObject<T | null>;
   callback: MutationCallback;
   options?: MutationObserverInit;
-};
+}
 
 export function useMutationObserver<T extends HTMLElement = HTMLElement>({
   targetRef,
   callback,
-  options = DEFAULT_OPTIONS,
+  options = DEFAULT_OPTIONS
 }: useMutationObserverProps<T>) {
   const observerRef = React.useRef<MutationObserver | null>(null);
   const prevTargetRef = React.useRef<T | null>(null);
