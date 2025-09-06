@@ -1,7 +1,6 @@
-import React from 'react';
+import { isBrowser } from "@/utils";
+import React from "react";
 
 export function useIsomorphicEffect() {
-  return typeof document !== 'undefined'
-    ? React.useLayoutEffect
-    : React.useEffect;
+  return isBrowser ? React.useLayoutEffect : React.useEffect;
 }
