@@ -1,6 +1,7 @@
 export * from './hooks/use-boolean';
 export * from './hooks/use-counter';
 export * from './hooks/use-effect-once';
+export * from './hooks/use-event-listener';
 export * from './hooks/use-is-online';
 export * from './hooks/use-isomorphic-effect';
 export * from './hooks/use-latest';
