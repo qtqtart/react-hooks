@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react-vite';
 
-import { useCounter } from '@/hooks/use-counter';
+import { useCounter } from '.';
 
 export default {
   title: 'State/useCounter/Demo'

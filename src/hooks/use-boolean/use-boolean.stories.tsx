@@ -1,6 +1,5 @@
 import type { Meta } from '@storybook/react-vite';
-
-import { useBoolean } from '@/hooks/use-boolean';
+import { useBoolean } from '.';
 
 export default {
   title: 'State/useBoolean/Demo'

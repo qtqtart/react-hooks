@@ -1,15 +1,15 @@
 type ConnectionType =
-  | "bluetooth"
-  | "cellular"
-  | "ethernet"
-  | "mixed"
-  | "none"
-  | "other"
-  | "unknown"
-  | "wifi"
-  | "wimax";
+  | 'bluetooth'
+  | 'cellular'
+  | 'ethernet'
+  | 'mixed'
+  | 'none'
+  | 'other'
+  | 'unknown'
+  | 'wifi'
+  | 'wimax';
 
-type EffectiveType = "slow-2g" | "2g" | "3g" | "4g";
+type EffectiveType = 'slow-2g' | '2g' | '3g' | '4g';
 
 export interface Connection extends EventTarget {
   readonly rtt: number;

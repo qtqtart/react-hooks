@@ -1,3 +1,3 @@
-export const isBrowser = typeof window !== "undefined";
+export const isBrowser = typeof window !== 'undefined';
 
-export const isNavigator = typeof navigator !== "undefined";
+export const isNavigator = typeof navigator !== 'undefined';

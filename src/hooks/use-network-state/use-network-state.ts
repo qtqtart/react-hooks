@@ -1,11 +1,11 @@
-import { isNavigator } from "@/utils";
-import React from "react";
+import React from 'react';
+import { isNavigator } from '@/utils';
 
 const getConnection = () =>
   isNavigator
-    ? navigator.connection ??
+    ? (navigator.connection ??
       navigator.mozConnection ??
-      navigator.webkitConnection
+      navigator.webkitConnection)
     : undefined;
 
 function getConnectionState() {
@@ -19,7 +19,7 @@ function getConnectionState() {
     downlinkMax: connection?.downlinkMax,
     type: connection?.type,
     effectiveType: connection?.effectiveType,
-    saveData: connection?.saveData,
+    saveData: connection?.saveData
   };
 }
 
@@ -30,21 +30,21 @@ export function useNetworkState() {
     const connection = getConnection();
 
     const options: AddEventListenerOptions = {
-      passive: true,
+      passive: true
     };
 
     const listener = () => {
       setValue(getConnectionState);
     };
 
-    window.addEventListener("online", listener, options);
-    window.addEventListener("offline", listener, options);
-    connection?.addEventListener("change", listener, options);
+    window.addEventListener('online', listener, options);
+    window.addEventListener('offline', listener, options);
+    connection?.addEventListener('change', listener, options);
 
     return () => {
-      window.removeEventListener("online", listener);
-      window.removeEventListener("offline", listener);
-      connection?.removeEventListener("change", listener);
+      window.removeEventListener('online', listener);
+      window.removeEventListener('offline', listener);
+      connection?.removeEventListener('change', listener);
     };
   }, []);
 

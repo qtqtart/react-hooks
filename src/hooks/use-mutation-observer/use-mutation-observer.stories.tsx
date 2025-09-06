@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react-vite';
 import { useRef, useState } from 'react';
 
-import { useMutationObserver } from '@/hooks/use-mutation-observer';
+import { useMutationObserver } from '.';
 
 export default {
   title: 'Element/useMutationObserver/Demo'

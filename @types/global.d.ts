@@ -1,4 +1,4 @@
-import { Connection } from "@/types/connection";
+import type { Connection } from '@/types/connection';
 
 declare global {
   interface Navigator {

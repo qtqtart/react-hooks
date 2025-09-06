@@ -1,5 +1,5 @@
-import { isBrowser } from "@/utils";
-import React from "react";
+import React from 'react';
+import { isBrowser } from '@/utils';
 
 export function useIsomorphicEffect() {
   return isBrowser ? React.useLayoutEffect : React.useEffect;
