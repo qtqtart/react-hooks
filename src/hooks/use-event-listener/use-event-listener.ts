@@ -7,7 +7,7 @@ export function useEventListener<
 >(
   eventName: K,
   handler: (event: WindowEventMap[K]) => void,
-  element?: React.RefObject<T> | EventTarget,
+  element: React.RefObject<T> | EventTarget = window,
   options?: AddEventListenerOptions | boolean
 ) {
   const handlerRef = React.useRef(handler);
@@ -17,10 +17,8 @@ export function useEventListener<
   }, [handler]);
 
   React.useEffect(() => {
-    const hasCurrent = element && 'current' in element;
-    const targetElement = hasCurrent ? element.current : (element ?? window);
-
-    if (!targetElement?.addEventListener) {
+    const target = element && 'current' in element ? element.current : element;
+    if (!(target && 'addEventListener' in target)) {
       return;
     }
 
@@ -28,10 +26,10 @@ export function useEventListener<
       handlerRef.current(event as WindowEventMap[K]);
     };
 
-    targetElement.addEventListener(eventName, listener, options);
+    target.addEventListener(eventName, listener, options);
 
     return () => {
-      targetElement.removeEventListener(eventName, listener, options);
+      target.removeEventListener(eventName, listener, options);
     };
   }, [eventName, element, options]);
 }
