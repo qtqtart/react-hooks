@@ -9,6 +9,7 @@ export * from './hooks/use-latest';
 export * from './hooks/use-mount';
 export * from './hooks/use-mutation-observer';
 export * from './hooks/use-network-state';
+export * from './hooks/use-time';
 export * from './hooks/use-title';
 export * from './hooks/use-toggle';
 export * from './hooks/use-unmount';
