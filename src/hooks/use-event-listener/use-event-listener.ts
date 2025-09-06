@@ -7,7 +7,7 @@ export function useEventListener<
 >(
   eventName: K,
   handler: (event: WindowEventMap[K]) => void,
-  element: React.RefObject<T> | EventTarget = window,
+  element: React.RefObject<T | null> | EventTarget = window,
   options?: AddEventListenerOptions | boolean
 ) {
   const handlerRef = React.useRef(handler);

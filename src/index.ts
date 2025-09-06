@@ -1,4 +1,5 @@
 export * from './hooks/use-boolean';
+export * from './hooks/use-click-outside';
 export * from './hooks/use-counter';
 export * from './hooks/use-effect-once';
 export * from './hooks/use-event-listener';
