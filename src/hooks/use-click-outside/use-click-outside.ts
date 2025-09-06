@@ -15,15 +15,9 @@ export function useClickOutside<T extends HTMLElement>(
     const listener = (event: MouseEvent | TouchEvent) => {
       const element = ref.current;
 
-      if (
-        !(event.target instanceof Node) ||
-        !element ||
-        element.contains(event.target)
-      ) {
-        return;
+      if (element && !element.contains(event.target as Node)) {
+        handlerRef.current(event);
       }
-
-      handlerRef.current(event);
     };
 
     document.addEventListener('mousedown', listener, true);
