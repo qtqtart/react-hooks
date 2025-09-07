@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function useTime() {
-  const [value, setValue] = React.useState(new Date());
+  const [value, setValue] = React.useState(() => new Date());
 
   React.useEffect(() => {
     const timerId = setInterval(() => {

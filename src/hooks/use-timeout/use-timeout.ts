@@ -4,6 +4,7 @@ import { useEvent } from '../use-event';
 
 export function useTimeout(callback: () => void, delay: number) {
   const [value, setValue] = React.useState(false);
+
   const timeoutIdRef = React.useRef<Timeout>(undefined);
   const memoizedCallback = useEvent(callback);
 
@@ -16,7 +17,7 @@ export function useTimeout(callback: () => void, delay: number) {
     return () => {
       clearTimeout(timeoutIdRef.current);
     };
-  }, []);
+  }, [delay]);
 
   const clear = () => {
     clearTimeout(timeoutIdRef.current);
